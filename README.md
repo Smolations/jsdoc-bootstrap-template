@@ -23,31 +23,30 @@ Now you're ready to install JSDoc and import the template.
 via homebrew (recommended for Mac OS X machines)
 ------------------------------------------------
 Open your Terminal and do the following:
-```
-# update homebrew
-$ brew update
 
-# make sure you have the `versions` functionality installed/enabled
-$ brew tap homebrew/versions
+    :::bash
+    # update homebrew
+    $ brew update
 
-# install JSDoc3. current version at the time of this writing is 3.2.2.
-$ brew install jsdoc3
+    # make sure you have the `versions` functionality installed/enabled
+    $ brew tap homebrew/versions
 
-# tell homebrew NOT to update this module when the author updates the
-# version. this ensures compatibility.
-$ brew pin jsdoc3
-```
+    # install JSDoc3. current version at the time of this writing is 3.2.2.
+    $ brew install jsdoc3
+
+    # tell homebrew NOT to update this module when the author updates the
+    # version. this ensures compatibility.
+    $ brew pin jsdoc3
 
 Homebrew installs software (by default) in /usr/local/Cellar. The template contents defined in this repository must live inside of the JSDoc install directory. In order to keep the template repo more visible and accessible, it is recommended that you create a symlink from the repo into the JSDoc templates folder:
-```
-# now we can create the symlink
-# $ ln -s <existing> <symlink_destination>
-# the -s option means symlink (or "soft" link)
-$ ln -s "${workspace_path}jsdoc-rendering-template" /usr/local/Cellar/jsdoc3/3.2.2/libexec/templates/finl
 
-# make sure the template folder is symlinked as **finl**!
-```
+    :::bash
+    # now we can create the symlink
+    # $ ln -s <existing> <symlink_destination>
+    # the -s option means symlink (or "soft" link)
+    $ ln -s "${workspace_path}jsdoc-rendering-template" /usr/local/Cellar/jsdoc3/3.2.2/libexec/templates/finl
 
+    # make sure the template folder is symlinked as **finl**!
 
 
 via npm (**must** use this for Windows, but works with other platforms too)
@@ -79,9 +78,9 @@ Usage
 Now that everything is installed and linked, we can start generating the docs. Firstly, you should know that the file `jsdoc.conf.json` has already been committed to the [finishline](https://bitbucket.org/finishline/finish-line-main/src/101082196bcbf88ab71eb1ef5fa86fde5dfac124/modules/base/j2ee-apps/base/web-app.war/jsdoc.conf.json?at=master) project. Furthermore, the output directory of the docs (`../web-app.war/docs`) has already been added to the project's `.gitignore` file so that you can generate over and over again without needing to worry about committing any of the documentation stuff. **Careful!** If you make changes to the `jsdoc.conf.json` file, it will affect all members on the team, so be sure to communicate your changes before committing them.
 
 An [FLGitscripts](https://bitbucket.org/finishline/flgitscripts/src/45a4d70dff5b9be4a985fdf69b2cd07172117fd7/bash_scripts/build_jsdocs.sh?at=master) command has been created to generate the documentation for you. It relies on the aforementioned configuration file, but can be run from any directory.
-```
-$ buildjsdocs
-```
+
+    :::bash
+    $ buildjsdocs
 
 Once the HTML has been generated, simply pop open any HTML file in that directory and your browser should display it. All HTML documents are linked relatively, so no web server is required to view the docs.
 
