@@ -58,6 +58,7 @@ via npm (**must** use this for Windows, but works with other platforms too)
 Unfortunately, `npm` doesn't have the same "pin" mechanism that homebrew has to lock down the version. Therefore, try to **never** run only `$ npm update` as it will update any modules which have been upgraded. Instead, only update specific modules which require it by specifying the module on the command line (e.g.): `$ npm update -g bless`
 
 Depending on your operating system, the location of the global Node modules will vary. Since FINL devs are using OS X or Windows, I'll focus on those two. You can find this information out if your un `$ npm list -g` (note that the node_modules folder is omitted from the output, but each module is located within that folder). Please verify before moving forward:
+
 - Mac OS X:  `/usr/local/lib/node_modules`
 - Windows:  `~/AppData/Roaming/npm/node_modules`
 
