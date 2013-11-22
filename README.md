@@ -11,11 +11,11 @@ Installation
 To generate documentation locally (say, to validate JSDoc comments in a dev's current branch), JSDoc3 must be installed on the dev's local machine. JSDoc3 can be installed in two different ways:
 
 First, make sure you clone this repo into the proper location:
-```
-# should be alongside other FINL projects (repos)
-$ cd "$workspace_path"
-$ git clone git@bitbucket.org:finishline/jsdoc-rendering-template.git
-```
+
+    :::bash
+    # should be alongside other FINL projects (repos)
+    $ cd "$workspace_path"
+    $ git clone git@bitbucket.org:finishline/jsdoc-rendering-template.git
 
 Now you're ready to install JSDoc and import the template.
 
@@ -78,7 +78,7 @@ Usage
 
 Now that everything is installed and linked, we can start generating the docs. Firstly, you should know that the file `jsdoc.conf.json` has already been committed to the [finishline](https://bitbucket.org/finishline/finish-line-main/src/101082196bcbf88ab71eb1ef5fa86fde5dfac124/modules/base/j2ee-apps/base/web-app.war/jsdoc.conf.json?at=master) project. Furthermore, the output directory of the docs (`../web-app.war/docs`) has already been added to the project's `.gitignore` file so that you can generate over and over again without needing to worry about committing any of the documentation stuff. **Careful!** If you make changes to the `jsdoc.conf.json` file, it will affect all members on the team, so be sure to communicate your changes before committing them.
 
-An FLGitscripts command has been created to generate the documentation for you. It relies on the aforementioned configuration file, but can be run from any directory.
+An [FLGitscripts](https://bitbucket.org/finishline/flgitscripts/src/45a4d70dff5b9be4a985fdf69b2cd07172117fd7/bash_scripts/build_jsdocs.sh?at=master) command has been created to generate the documentation for you. It relies on the aforementioned configuration file, but can be run from any directory.
 ```
 $ buildjsdocs
 ```
