@@ -8,7 +8,7 @@ The default template for JSDoc 3 uses: [the Taffy Database library](http://taffy
 Installation
 ============
 
-To generate documentation locally (say, to validate JSDoc comments in a dev's current branch), JSDoc3 must be installed on the dev's local machine. JSDoc3 can be installed in two different ways:
+To generate documentation locally (say, to validate JSDoc comments in a dev's current branch), JSDoc3 must be installed on the dev's local machine.
 
 First, make sure you clone this repo into the proper location:
 
@@ -17,7 +17,7 @@ First, make sure you clone this repo into the proper location:
     $ cd "$workspace_path"
     $ git clone git@bitbucket.org:finishline/jsdoc-rendering-template.git
 
-Now you're ready to install JSDoc and import the template.
+Now you're ready to install JSDoc and import the template. JSDoc3 can be installed in two different ways:
 
 
 via homebrew (recommended for Mac OS X machines)
