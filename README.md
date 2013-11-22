@@ -66,7 +66,7 @@ In Windows, symlinking isn't as straight forward. However, we want to keep the r
 
 1. Open the Start menu and type "cmd" if your version permits, or navigate to All Programs -> Accessories -> Command Prompt. DON'T CLICK YET!
 2. Right-Click on the program and select "Run As Administrator"
-3. To get the paths just right, you should use a text editor to alter the paths. Since we're using cmd.exe, we must use Windows commands/paths. Below is an example of the most common usage(> replaces $ for Windows):
+3. To get the paths just right, you should use a text editor to alter the paths. Since we're using cmd.exe, we must use Windows commands/paths. Below is an example of the most common usage (> replaces $ prompt for Windows):
     * `> mklink /d "C:\Users\abc\AppData\Roaming\npm\node_modules\jsdoc\templates\finl" "D:\Development\workspaces\mac_helios_workspace\jsdoc-rendering-template"`
 
 You can verify that the symlink worked by using Windows Explorer and navigating to the JSDoc templates directory. There should be a shortcut named "finl" that should "contain" the files in this repo.
