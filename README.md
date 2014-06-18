@@ -13,9 +13,11 @@ It is probably a good idea to clone this repo into some easily-accessible locati
 
 For the purposes of this README, it will be assumed that you will be cloning and then symlinking the repo.
 
-    # wherever you're putting it...
-    $ cd "$some_workspace_path"
-    $ git clone git@bitbucket.org:Smolations/jsdoc-bootstrap-template.git
+```shell
+# wherever you're putting it...
+$ cd "$some_workspace_path"
+$ git clone git@bitbucket.org:Smolations/jsdoc-bootstrap-template.git
+```
 
 Now you're ready to install JSDoc and import the template. JSDoc can be installed in two different ways:
 
@@ -24,25 +26,29 @@ Now you're ready to install JSDoc and import the template. JSDoc can be installe
 
 Open your Terminal and enter the following commands:
 
-    # update homebrew
-    $ brew update
+```shell
+# update homebrew
+$ brew update
 
-    # install JSDoc3. current version at the time of this writing is 3.2.2.
-    $ brew install jsdoc3
+# install JSDoc3. current version at the time of this writing is 3.2.2.
+$ brew install jsdoc3
 
-    # tell homebrew NOT to update this module when the author updates the
-    # version. this ensures compatibility. if this is not done, you will need
-    # to symlink the template repo into each installed version's templates directory
-    $ brew pin jsdoc3
+# tell homebrew NOT to update this module when the author updates the
+# version. this ensures compatibility. if this is not done, you will need
+# to symlink the template repo into each installed version's templates directory
+$ brew pin jsdoc3
+```
 
 Homebrew installs software (by default) in `/usr/local/Cellar`. The template contents defined in this repository must live inside of the JSDoc install directory. In order to keep the template repo more visible and accessible (and safe from accidental deletion), create a symlink from the repo into the JSDoc templates folder:
 
-    # now we can create the symlink (-s option means symlink or "soft" link)
-    # usage:  ln -s <existing> <symlink_destination>
-    $ ln -s "${some_workspace_path}jsdoc-bootstrap-template" /usr/local/Cellar/jsdoc3/3.2.2/libexec/templates/bootstrap
+```shell
+# now we can create the symlink (-s option means symlink or "soft" link)
+# usage:  ln -s <existing> <symlink_destination>
+$ ln -s "${some_workspace_path}jsdoc-bootstrap-template" /usr/local/Cellar/jsdoc3/3.2.2/libexec/templates/bootstrap
 
-    # the template folder is symlinked as `bootstrap` above, but it can be
-    # whatever you want (since it's just a symlink!)
+# the template folder is symlinked as `bootstrap` above, but it can be
+# whatever you want (since it's just a symlink!)
+```
 
 
 ### via npm (**must** use this for Windows, but works with other platforms too)
