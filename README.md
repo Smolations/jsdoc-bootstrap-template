@@ -1,29 +1,29 @@
 JSDoc Bootstrap Template
 ========================
 
-The default [JSDoc](http://usejsdoc.org) template is fairly bland, so I took it upon myself to create a custom template using the marvelous [Bootstrap](http://getbootstrap.com/) library. There were a couple of other Bootstrap-based templates out there before I began this project, but none of them satisfied my needs. This template uses Bootsrap 2, but eventually will be upgraded to Bootstrap 3.
+The default [JSDoc3](http://usejsdoc.org) template is fairly bland, so I took it upon myself to create a custom template using the marvelous [Bootstrap](http://getbootstrap.com/) library. There were a couple of other Bootstrap-based templates out there before I began this project, but none of them satisfied my needs. This template uses Bootstrap 2, but will eventually be upgraded to Bootstrap 3.
 
-The default template for JSDoc3 uses: [the Taffy Database library](http://taffydb.com/) and the [Underscore Template library](http://documentcloud.github.com/underscore/#template).
+The default template for JSDoc3 uses: the [Taffy Database](http://taffydb.com/) library and the [Underscore](http://documentcloud.github.com/underscore) library.
 
 
 Installation
 ------------
 
-It is probably a good idea to clone this repo into some easily-accessible location (perhaps you already have a folder full of repositories?) and then __symlink__ the folder into the JSDoc templates directory. However, you may choose to clone this repo directly into the JSDoc folder. Just be aware, if you choose the second method, that the repo might disappear if you ever uninstall or upgrade JSDoc! For the purposes of this README, it will be assumed that you will be cloning and then symlinking the repo.
+It is probably a good idea to clone this repo into some easily-accessible location (perhaps you already have a folder full of repositories?) and then _symlink_ the folder into the JSDoc templates directory. However, you may choose to clone this repo directly into the JSDoc folder. Beware, if you choose the second method the repo might disappear if you ever uninstall or upgrade JSDoc!
 
-    :::bash
+For the purposes of this README, it will be assumed that you will be cloning and then symlinking the repo.
+
     # wherever you're putting it...
     $ cd "$some_workspace_path"
     $ git clone git@bitbucket.org:Smolations/jsdoc-bootstrap-template.git
 
-Now you're ready to install JSDoc and import the template. JSDoc3 can be installed in two different ways:
+Now you're ready to install JSDoc and import the template. JSDoc can be installed in two different ways:
 
 
-### via homebrew (recommended for Mac OS X machines)
+### Option 1: via homebrew (for Mac OS X machines)
 
-Open your Terminal and do the following:
+Open your Terminal and enter the following commands:
 
-    :::bash
     # update homebrew
     $ brew update
 
@@ -37,7 +37,6 @@ Open your Terminal and do the following:
 
 Homebrew installs software (by default) in `/usr/local/Cellar`. The template contents defined in this repository must live inside of the JSDoc install directory. In order to keep the template repo more visible and accessible (and safe from accidental deletion), create a symlink from the repo into the JSDoc templates folder:
 
-    :::bash
     # now we can create the symlink (-s option means symlink or "soft" link)
     # usage:  ln -s <existing> <symlink_destination>
     $ ln -s "${some_workspace_path}jsdoc-bootstrap-template" /usr/local/Cellar/jsdoc3/3.2.2/libexec/templates/bootstrap
