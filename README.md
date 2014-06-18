@@ -39,28 +39,26 @@ $ brew install jsdoc3
 $ brew pin jsdoc3
 ```
 
-Homebrew installs software (by default) in `/usr/local/Cellar`. The template contents defined in this repository must live inside of the JSDoc install directory. In order to keep the template repo more visible and accessible (and safe from accidental deletion), create a symlink from the repo into the JSDoc templates folder:
+Homebrew installs software (by default) in `/usr/local/Cellar`. The template contents defined in this repository must live inside the JSDoc install directory in the `templates` folder. In order to keep the template repo more visible and accessible (and safe from accidental deletion), create a symlink from the repo into the JSDoc `templates` folder:
 
 ```shell
 # now we can create the symlink (-s option means symlink or "soft" link)
 # usage:  ln -s <existing> <symlink_destination>
-$ ln -s "${some_workspace_path}jsdoc-bootstrap-template" /usr/local/Cellar/jsdoc3/3.2.2/libexec/templates/bootstrap
-
-# the template folder is symlinked as `bootstrap` above, but it can be
+# note: the template folder is symlinked as `bootstrap` below, but it can be
 # whatever you want (since it's just a symlink!)
+$ ln -s "${some_workspace_path}jsdoc-bootstrap-template" /usr/local/Cellar/jsdoc3/3.2.2/libexec/templates/bootstrap
 ```
 
 
-### via npm (**must** use this for Windows, but works with other platforms too)
+### Option2: via npm (**must** use this for Windows, but works with other platforms too)
 
-`npm` is Node's package manager. I generally prefer to use `npm` only when a package can ONLY be installed via `npm` (like LESS and JSHint). However, some packages were written for node.js and then ported to other platforms. In these cases I install the package using `npm`.
+`npm` is Node's package manager. I generally prefer to use `npm` when a package can ONLY be installed via `npm` (like LESS and JSHint). However, some packages were written for node.js and then ported to other platforms. In these cases I install the package using `npm`.
 
-1. Install JSDoc (globally). Its dependencies will be installed automatically:
-    * `npm install -g jsdoc@3.2.2`
+1. Install JSDoc (globally). Its dependencies will be installed automatically: `$ npm install -g jsdoc@3.2.2`
 
-Unfortunately, `npm` doesn't have the same "pin" mechanism that homebrew has to lock down the version. Therefore, try to **never** run only `$ npm update` as it will update any modules which have been upgraded. Instead, only update specific modules which require it by specifying the module on the command line (e.g.): `$ npm update -g bless`
+Unfortunately, `npm` doesn't have the same "pin" mechanism that homebrew has to lock down the version. Therefore, try to **never** run only `$ npm update` as it will update any and all modules which have been upgraded since the command was last run. Instead, only update specific modules which require it by specifying the module on the command line (e.g.): `$ npm update -g bless`
 
-Depending on your operating system, the location of the global `node_modules` will vary. You can find this information out if your un `$ npm list -g` (note that the node_modules folder is omitted from the output, but each module is located within that folder). Please verify before moving forward:
+Depending on your operating system, the location of the global `node_modules` will vary. You can find this information out if you run `$ npm list -g` (note: the `node_modules` folder is omitted from the output, but each module is located within that folder). Please verify before moving forward:
 
 - Mac OS X:  `/usr/local/lib/node_modules`
 - Windows:  `~/AppData/Roaming/npm/node_modules`
@@ -69,10 +67,11 @@ In Windows, symlinking isn't as straight forward. However, we want to keep the r
 
 1. Open the Start menu and type "cmd" if your version permits, or navigate to All Programs -> Accessories -> Command Prompt. DON'T CLICK YET!
 2. Right-Click on the program and select "Run As Administrator"
-3. To get the paths just right, you should use a text editor to alter the paths. Since we're using cmd.exe, we must use Windows commands/paths. Below is an example of the most common usage (> replaces $ prompt for Windows):
-    * `> mklink /d "C:\Users\Smolations\AppData\Roaming\npm\node_modules\jsdoc\templates\bootstrap" "C:\Users\Smolations\workspaces\jsdoc-bootstrap-template"`
+3. To get the paths just right, you should use a text editor to alter them. Since we're using `cmd.exe`, we must use Windows commands/paths. Below is an example of the most common usage (> replaces $ prompt for Windows):
 
-You can verify that the symlink worked by using Windows Explorer and navigating to the JSDoc templates directory. There should be a shortcut named `bootstrap` (or whatever __you__ named it) that should provide access to the files in this repo.
+    > mklink /d "C:\Users\Smolations\AppData\Roaming\npm\node_modules\jsdoc\templates\bootstrap" "C:\Users\Smolations\workspaces\jsdoc-bootstrap-template"
+
+You can verify that the symlink was successful by using Windows Explorer and navigating to the JSDoc `templates` directory. There should be a shortcut named `bootstrap` (or whatever _you_ named it) that should provide access to the files in this repo.
 
 
 Usage
