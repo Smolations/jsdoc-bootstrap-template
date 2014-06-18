@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/storjarn/jsdoc-bootstrap-template.git"
+    "url": "git://github.com/Smolations/jsdoc-bootstrap-template.git"
   },
   "keywords": [
     "jsdoc",
@@ -22,7 +22,7 @@
   "license": "MIT",
   "readmeFilename": "README.md",
   "bugs": {
-    "url": "https://github.com/storjarn/jsdoc-bootstrap-template/issues"
+    "url": "https://github.com/Smolations/jsdoc-bootstrap-template/issues"
   },
-  "homepage": "https://github.com/storjarn/jsdoc-bootstrap-template"
+  "homepage": "https://github.com/Smolations/jsdoc-bootstrap-template"
 }
