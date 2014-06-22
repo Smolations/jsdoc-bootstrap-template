@@ -518,9 +518,13 @@ exports.publish = function(taffyData, opts, tutorials) {
         var docletPath;
         if (doclet.meta) {
             docletPath = getPathFromDoclet(doclet);
-            docletPath = sourceFiles[docletPath].shortened;
-            if (docletPath) {
-                doclet.meta.filename = docletPath;
+            if (!!sourceFiles[docletPath]) {
+                docletPath = sourceFiles[docletPath].shortened;
+                if (docletPath) {
+                    doclet.meta.filename = docletPath;
+                }
+            } else {
+                console.log(docletPath);
             }
         }
     });
