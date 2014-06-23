@@ -64,23 +64,28 @@
         $(tabPanes[i]).attr('id', 'tab' + id);
     }
 
+    // insert title into sidebar
+    $('#docs-content > section > header > h2').each(function(idx, item){
+        var pageTitle = $(item).text().replace(/\s/g, '');
+        var href = pageTitle.replace(/\//ig, "_").replace('.js', '').replace(/\./ig, '_')
+        $(item).parent().prepend('<a>&nbsp;</a>').find('a').attr('id', href);
+        if (pageTitle.length) {
+            liDivider = ($navList.find('li').length)
+                            ? '<li class="divider"></li>'
+                            : ''
+                            ;
+            $('#docs-sidebar .nav-list')
+                .prepend('<li><h4><a href="#' + href + '">' + pageTitle + '</a></h4></li>' + liDivider);
+        }
+    });
+
     // fix scroll spy so that it takes into account the fixed top nav bar
     $navList.find('li a').click(function(event) {
         event.preventDefault();
         $($(this).attr('href'))[0].scrollIntoView();
         scrollBy(0, -offset);
     });
-
-    // insert title into sidebar
-    pageTitle = $('#docs-content > section > header > h2').text().replace(/\s/g, '');
-    if (pageTitle.length) {
-        liDivider = ($navList.find('li').length)
-                        ? '<li class="divider"></li>'
-                        : ''
-                        ;
-        $('#docs-sidebar .nav-list')
-            .prepend('<li><h4>' + pageTitle + '</h4></li>' + liDivider);
-    }
+        
 
     // make external links go to a new tab/window
     $('a[href*=http]').attr('target', '_blank');
